@@ -1,0 +1,8 @@
+[pixiv_oauth]
+# 首版最小实现：/pixiv 从这里随机取一个 URL 下载并回图。
+# 建议先填你自己的可直连图片地址；后续再替换成真正的 Pixiv OAuth 拉图逻辑。
+fallback_image_urls = [
+  "https://i.pximg.net/img-original/img/2025/08/21/10/15/01/134142834_p0.png"
+]
+
+download_timeout_seconds = 15

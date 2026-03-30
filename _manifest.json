@@ -1,0 +1,47 @@
+{
+  "manifest_version": 1,
+  "name": "Pixiv OAuth 插件 (Pixiv OAuth Plugin)",
+  "version": "0.1.0",
+  "description": "通过 Pixiv OAuth + App API 获取作品信息与图片（非 luolicon/lolicon）",
+  "author": {
+    "name": "Qr0w",
+    "url": "https://github.com/MaiM-with-u"
+  },
+  "license": "GPL-v3.0-or-later",
+  "host_application": {
+    "min_version": "0.8.0"
+  },
+  "homepage_url": "https://github.com/MaiM-with-u/maibot",
+  "repository_url": "https://github.com/MaiM-with-u/maibot",
+  "keywords": [
+    "pixiv",
+    "oauth",
+    "illustration",
+    "image"
+  ],
+  "categories": [
+    "Media",
+    "Utility"
+  ],
+  "default_locale": "zh-CN",
+  "locales_path": "_locales",
+  "plugin_info": {
+    "is_built_in": false,
+    "plugin_type": "utility",
+    "components": [
+      {
+        "type": "command",
+        "name": "pixiv",
+        "description": "按作品ID获取 Pixiv 图片与基础信息",
+        "pattern": "/pixiv <illust_id>"
+      }
+    ],
+    "features": [
+      "Pixiv OAuth 刷新令牌鉴权",
+      "按 illust_id 拉取作品详情",
+      "返回作品标题/作者并发送图片",
+      "R18 内容可配置过滤"
+    ]
+  },
+  "id": "qr0w.pixiv_oauth_plugin"
+}
