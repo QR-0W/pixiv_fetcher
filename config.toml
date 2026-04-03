@@ -1,8 +1,47 @@
-[pixiv_oauth]
-# 首版最小实现：/pixiv 从这里随机取一个 URL 下载并回图。
-# 建议先填你自己的可直连图片地址；后续再替换成真正的 Pixiv OAuth 拉图逻辑。
-fallback_image_urls = [
-  "https://i.pximg.net/img-original/img/2025/08/21/10/15/01/134142834_p0.png"
-]
+# pixiv_oauth_plugin - 自动生成的配置文件
+# 基于 pixivpy 官方库实现的 Pixiv 图片获取插件。支持标签AND/OR组合搜索、关键词搜索、用户搜索、作品ID搜索、日期搜索、长宽比筛选、AI作品排除、R18内容控制等功能。
 
-download_timeout_seconds = 15
+[plugin]
+
+# 是否启用插件
+enabled = true
+
+# 配置文件版本
+config_version = "2.0.0"
+
+[oauth]
+
+# Pixiv OAuth Access Token（可选）
+access_token = ""
+
+# Pixiv OAuth Refresh Token（必需）
+refresh_token = ""
+
+[features]
+
+# 默认返回图片数量（1-20）
+default_num = 1
+
+# 命令冷却时间（秒）
+cooldown_seconds = 10
+
+# 是否允许R18内容
+allow_r18 = true
+
+# 是否允许R18G内容
+allow_r18g = false
+
+# 是否默认排除AI作品
+default_exclude_ai = true
+
+# 是否使用合并转发消息发送多张图片
+use_forward_message = true
+
+# 零结果时是否自动降级过滤条件
+enable_auto_degradation = true
+
+# 代理服务器地址（可选，如 http://127.0.0.1:7890）
+proxy = ""
+
+# 图片代理服务器，用于转换Pixiv原始图片URL（如i.pixiv.re, pximg.cn）
+image_proxy = "i.pixiv.cat"

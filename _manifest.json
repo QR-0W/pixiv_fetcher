@@ -1,47 +1,64 @@
 {
   "manifest_version": 1,
-  "name": "Pixiv OAuth 插件 (Pixiv OAuth Plugin)",
-  "version": "0.1.0",
-  "description": "通过 Pixiv OAuth + App API 获取作品信息与图片（非 luolicon/lolicon）",
+  "name": "Pixiv OAuth 图片插件",
+  "version": "2.0.0",
+  "description": "基于 pixivpy 官方库实现的 Pixiv 图片获取插件。支持标签AND/OR组合搜索、关键词搜索、用户搜索、作品ID搜索、日期搜索、长宽比筛选、AI作品排除、R18内容控制等功能。",
   "author": {
-    "name": "Qr0w",
+    "name": "Kilo Code",
     "url": "https://github.com/MaiM-with-u"
   },
-  "license": "GPL-v3.0-or-later",
-  "host_application": {
-    "min_version": "0.8.0"
-  },
+  "license": "MIT",
   "homepage_url": "https://github.com/MaiM-with-u/maibot",
   "repository_url": "https://github.com/MaiM-with-u/maibot",
+  "host_application": {
+    "min_version": "0.11.0"
+  },
   "keywords": [
     "pixiv",
     "oauth",
     "illustration",
-    "image"
+    "image",
+    "图片",
+    "搜索",
+    "pixivpy"
   ],
   "categories": [
-    "Media",
-    "Utility"
+    "Entertainment & Interaction",
+    "External Integration"
   ],
   "default_locale": "zh-CN",
-  "locales_path": "_locales",
   "plugin_info": {
     "is_built_in": false,
-    "plugin_type": "utility",
+    "plugin_type": "general",
     "components": [
       {
         "type": "command",
         "name": "pixiv",
-        "description": "按作品ID获取 Pixiv 图片与基础信息",
-        "pattern": "/pixiv <illust_id>"
+        "description": "通过 Pixiv OAuth 获取图片"
       }
-    ],
-    "features": [
-      "Pixiv OAuth 刷新令牌鉴权",
-      "按 illust_id 拉取作品详情",
-      "返回作品标题/作者并发送图片",
-      "R18 内容可配置过滤"
     ]
   },
-  "id": "qr0w.pixiv_oauth_plugin"
+  "permissions": [
+    "send.image",
+    "send.text",
+    "send.forward",
+    "network.http"
+  ],
+  "changelog": {
+    "2.0.0": {
+      "date": "2026-03-31",
+      "changes": [
+        "基于 pixivpy 官方库重写，提升稳定性",
+        "新增 random:N 随机获取多个帖子功能",
+        "新增 tag:XXX|YYY OR搜索支持",
+        "新增 user:用户名 按用户名搜索",
+        "新增 id:作品ID 按作品ID搜索",
+        "新增 date:YYYY-MM-DD 按日期搜索",
+        "优化参数解析，支持所有参数自由组合",
+        "内置代理支持，自动处理Pixiv访问限制",
+        "自动Token刷新机制"
+      ]
+    }
+  },
+  "id": "Kilo Code.maibot"
 }
